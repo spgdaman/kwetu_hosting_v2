@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url('^$',views.home,name = 'homePage'),
-    url(r'^profile/$',views.profile,name='profile'),
-    url(r'^edit/profile/$',views.edit_profile,name='edit_profile'),
+    path('',views.home,name = 'homePage'),
+    path('^profile/',views.profile,name='profile'),
+    path('^edit/profile/',views.edit_profile,name='edit_profile'),
 ]
