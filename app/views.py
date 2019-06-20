@@ -43,3 +43,8 @@ def video_upload(request):
     else:
         form = AssetForm()
     return render(request, 'videoupload.html',{'form':form})
+
+def view_assets(request):
+    current_user = request.user
+    assets = Assets.objects.filter(id=current_user.id)
+    return render(request, 'viewassets.html',{"assets":assets})
