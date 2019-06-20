@@ -1,1 +1,1 @@
-web: gunicorn kwetu_hosting.wsgi --logfile -
+web: gunicorn kwetu_hosting.wsgi --log-file -
