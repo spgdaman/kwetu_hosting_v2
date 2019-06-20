@@ -1,0 +1,1 @@
+web: gunicorn kwetu_hosting.wsgi --logfile -
