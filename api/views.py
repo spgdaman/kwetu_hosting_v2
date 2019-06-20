@@ -7,17 +7,17 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 # models import
-from app import Assets
+from app.models import Assets
 
 # serializers import
 from . import serializers
 
 class ListAssets(generics.ListCreateAPIView):
-    queryset = models.Assets.objects.all()
+    queryset = Assets.objects.all()
     serializer_class = serializers.AssetSerializer
 
 class DetailAssets(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Assets.objects.all()
+    queryset = Assets.objects.all()
     serializer_class = serializers.AssetSerializer
 
 class FileUploadView(APIView):

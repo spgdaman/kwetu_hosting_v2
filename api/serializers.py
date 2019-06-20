@@ -10,9 +10,9 @@ class AssetSerializer(serializers.ModelSerializer):
             'date_time',
             'user',
         )
-        model = models.Asset
+        model = Assets
 
 class FileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Assets
+        model = Assets
         fields = ('name','assetfile',)

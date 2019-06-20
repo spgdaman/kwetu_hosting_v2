@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.ListAssets.as_view()),
     path('asset_id/<int:pk>/', views.DetailAssets.as_view()),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', incude('rest_auth.registration.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('upload_video/', views.FileUploadView.as_view()),
 ]
 
