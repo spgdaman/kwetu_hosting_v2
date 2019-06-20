@@ -30,3 +30,16 @@ def edit_profile(request):
         signup_form =EditForm() 
         
     return render(request, 'profile/edit_profile.html', {"date": date, "form": signup_form, "profile":profile})    
+
+def video_upload(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = AssetForm(request.POST, request.FILES)
+        if form.is_valid():
+            asset = form.save(commit=False)
+            asset.user = current_user
+            asset.save()
+            return redirect('home')
+    else:
+        form = AssetForm()
+    return render(request, 'videoupload.html',{'form':form})
