@@ -9,6 +9,9 @@ def home(request):
     assets = Assets.objects.all()
     return render(request, 'home.html' ,{"date":date, 'assets':assets})
 
+def index(request):
+    return render(request,'index.html')
+
 def profile(request):
     date = dt.date.today()
     current_user = request.user
