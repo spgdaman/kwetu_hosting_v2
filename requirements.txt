@@ -25,13 +25,3 @@ static3==0.7.0
 urllib3==1.25.3
 whitenoise==4.1.2
 django-heroku==0.3.1
-
-SECRET_KEY='ufkgx@k6k9%%^u-&=n%+%2b#q%yvfy-1b7s)*9y*-2=4b*f(p*'
-DEBUG=True
-DB_NAME='kwetu'
-DB_USER='simon'
-DB_PASSWORD='m1m1'
-DB_HOST='127.0.0.1'
-MODE='dev'
-ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
-DISABLE_COLLECTSTATIC=1
