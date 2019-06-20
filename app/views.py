@@ -46,5 +46,5 @@ def video_upload(request):
 
 def view_assets(request):
     current_user = request.user
-    assets = Assets.objects.filter(id=current_user.id)
+    assets = Assets.objects.all()
     return render(request, 'viewassets.html',{"assets":assets})

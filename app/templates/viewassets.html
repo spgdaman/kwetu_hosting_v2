@@ -3,21 +3,22 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        {% for asset in assets %}
-            <div class="card">
-                <div class="card-body">
-                    <video controls>
-                        <source src="{{asset.assetfile.url}}" type="video/mp4"></source>
-                    </video>
-                </div>
-                <div class="card-header">
-                    <p><strong>{{asset.name}}</strong></p>
-                    <p>Uploaded at: {{asset.date_time}}</p>
-                    <p>Uploaded by: {{asset.user}}</p>
-                </div>
-            </div>
-        {% endfor %}
+    <div class="row my-3">
+        {% if user.is_authenticated %}
+            {% for asset in assets %}
+                {% if asset.user.id == user.id %}
+                    <div class="col-sm-12 col-md-3">
+                        <iframe class="embed-responsive-item" controls allowfullscreen
+                            src="{{asset.assetfile.url}}" type="video/mp4">
+                        </iframe>
+                        
+                        <p><strong>{{asset.name}}</strong></p>
+                        <p>Uploaded at: {{asset.date_time}}</p>
+                        <p>Uploaded by: {{asset.user}}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}
