@@ -39,7 +39,7 @@ def video_upload(request):
             asset = form.save(commit=False)
             asset.user = current_user
             asset.save()
-            return redirect('home')
+            return redirect('homePage')
     else:
         form = AssetForm()
     return render(request, 'videoupload.html',{'form':form})
